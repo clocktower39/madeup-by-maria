@@ -11,23 +11,18 @@ import './App.css';
 
 const useStyles = makeStyles({
   root: {
-    display: 'flex',
-    flexDirection: 'column',
-    minHeight: '100%',
-    alignItems: 'center',
-    justifyContent: 'space-between'
+    backgroundColor: '#FBD4D5',
+    position: 'relative',
+    minHeight: '100vh',
   },
   Navbar:{
-    flexShrink: 0,
-
   },
   Switch:{
-    flexShrink: 0,
-    flexGrow: 1,
+  },
+  Container: {
+    height: '100%',
   },
   Footer:{
-    flexShrink: 0,
-
   },
 })
 
@@ -39,7 +34,7 @@ function App() {
       <Router>
         <Navbar className={classes.Navbar} />
         <Switch className={classes.Switch} >
-          <Container maxWidth={'sm'}>
+          <Container maxWidth={'sm'} className={classes.Container}>
             <Route exact path='/' component={Home} />
             <Route exact path='/about' component={About} />
             <Route exact path='/portfolio' component={Portfolio} />
