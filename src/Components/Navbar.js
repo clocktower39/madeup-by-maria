@@ -8,16 +8,19 @@ const useStyles = makeStyles({
         backgroundColor: '#FEFFFF',
     },
     option: {
-        padding: '5px',
+        padding: '10px',
     },
     Link: {
         textDecoration: 'none',
         color: '#413F3D',
+        padding: '10px',
+        width: '100%',
     }
 });
 
 function Navbar() {
     const classes = useStyles();
+
     return (
       <Grid container className={classes.root}>
         <Grid item className={classes.option}>

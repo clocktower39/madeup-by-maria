@@ -1,23 +1,12 @@
 import React from 'react';
-import { Box, CardMedia, Typography } from '@material-ui/core';
+import { CardMedia, Typography } from '@material-ui/core';
 import brandTitleImage from '../Images/madeupbymariaaboutimg.JPG';
-import KissMark from '../Images/Kiss Mark Emoji.png';
+import Header from './Header';
 
 function About() {
     return (
       <div>
-        <Typography variant={"h4"}>Madeup by Maria</Typography>
-        <Box
-          component={"span"}
-          style={{
-            width: "25px",
-            padding: 0,
-            margin: 0,
-            display: "inline-block",
-          }}
-        >
-          <CardMedia image={KissMark} style={{ paddingTop: "100%", top: 0 }} />
-        </Box>
+        <Header />
         <CardMedia
           image={brandTitleImage}
           style={{ paddingTop: "100%", top: 0 }}

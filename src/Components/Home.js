@@ -1,24 +1,29 @@
 import React from 'react'
-import { Box, CardMedia, Typography } from '@material-ui/core';
-import homeImg from '../Images/madeupbymariahomeimg.JPG'
-import KissMark from '../Images/Kiss Mark Emoji.png'
+import { Box, CardMedia, makeStyles, Typography } from '@material-ui/core';
+import homeImg from '../Images/madeupbymariahomeimg.JPG';
+import Header from './Header';
+
+const useStyles = makeStyles({
+    root: {
+        textAlign: 'center',
+    },
+    imgContainer: {
+        width: '100%'
+    },
+    homeImg: {
+        paddingTop: '100%',
+        top: 0,
+    }
+})
 
 function Home() {
+    const classes = useStyles();
     return (
-        <Box >
-            <Typography 
-                style={{fontFamily:'Lobster Two', fontStyle: 'italic', fontWeight: '400', fontSize: '38px',}}
-                variant={'h4'}
-                gutterBottom
-            >
-                Madeup by Maria
-                <Box style={{width: '25px', display: 'inline-block'}}>
-                    <CardMedia image={KissMark} style={{paddingTop: '100%',top: 0}}/>
-                </Box>
-            </Typography>
-            <Typography variant={'h6'}> Welcome...</Typography>
-            <Box >
-                <CardMedia image={homeImg} style={{paddingTop: '100%',top: 0}}/>
+        <Box className={classes.root}>
+            <Header />
+            <Typography variant={'h6'}>Welcome...</Typography>
+            <Box component='div' className={classes.imgContainer}>
+                <CardMedia image={homeImg} className={classes.homeImg}/>
             </Box>
             <Typography variant={'h6'} >Helping You Feel Beautiful</Typography>
         </Box>
