@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { GridList, GridListTile, Grid } from '@material-ui/core';
+import { GridList, GridListTile } from '@material-ui/core';
 
 function importAll(r) {
     return r.keys().map(r);
@@ -26,13 +26,6 @@ export default function ImageGridList() {
 
   return (
     <div className={classes.root}>
-        {/* <Grid container >
-            {tileData.map((tile) => (
-                <Grid xs={4} md={6} item>
-                    <img style={{width: '100%'}} src={tile.img} alt={tile.title} />
-                </Grid>
-            ))}
-        </Grid> */}
       <GridList cellHeight={230} className={classes.gridList} cols={3}>
 
         {tileData.map((tile) => (

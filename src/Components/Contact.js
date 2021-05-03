@@ -1,36 +1,78 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Button, Grid, TextField, Typography, makeStyles } from '@material-ui/core';
+
+const useStyles = makeStyles({
+    root: {},
+    TextField: {
+        backgroundColor: 'white',
+        borderRadius: 35,
+        '& fieldset': {
+            border: 'none',
+            borderRadius: 35,
+        }
+    },
+    Button: {
+        backgroundColor: 'white',
+    },
+})
 
 function Contact() {
+    const classes = useStyles();
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [summary, setSummary] = useState('');
+
+    const handleChange = (e,setter) => {
+        console.log(e)
+        setter(e.target.value);
+    }
+
     return (
-            <div action="" method="post">
-                <div id="form-title">
-                    Contact Me
-                </div>
-                <div data-validate="Please enter your name.">
-                    <h4>Please enter your name.</h4>
-                    <input  type="text" name="full_name" placeholder="Name" />
-
-                </div>
-                <div data-validate="Please enter a valid email address.">
-                    <h4 class="invalid-template ">Please enter a valid email address.</h4>
-                    <input class="validate-input" type="email" name="email" placeholder="Email" />
-
-                </div>
-                <div data-validate="Please enter your summary">
-                    <h4 class="invalid-template ">Please enter your summary</h4>
-                    <textarea class="validate-input" name="message" placeholder="Summary"></textarea>
-
-                </div>
-                <div>
-                    <button id="form-btn" type="submit" name="submit" value="Submit">
-                        <span>
-                            <i class="fa fa-paper-plane" aria-hidden="true"></i>
-                            Submit
-                        </span>
-                    </button>
-                </div>
-            </div>
-    )
+      <Grid container className={classes.root} spacing={3}>
+        <Grid container item xs={12} justify='center'>
+          <Typography variant={"h4"} gutterBottom>Contact Me</Typography>
+        </Grid>
+        
+        <Grid item xs={12} >
+          <TextField
+            className={classes.TextField}
+            fullWidth
+            type="text"
+            placeholder="Name"
+            variant="outlined"
+            value={name}
+            onChange={(e)=>handleChange(e, setName)}
+          />
+        </Grid>
+        <Grid item xs={12} >
+          <TextField
+            className={classes.TextField}
+            fullWidth
+            type="email"
+            placeholder="Email"
+            variant="outlined"
+            value={email}
+            onChange={(e)=>handleChange(e, setEmail)}
+          />
+        </Grid>
+        <Grid item xs={12} >
+          <TextField
+            className={classes.TextField}
+            fullWidth
+            type="text"
+            placeholder="Summary"
+            variant="outlined"
+            multiline
+            rows={7}
+            value={summary}
+            onChange={(e)=>handleChange(e, setSummary)}
+          />
+        </Grid>
+        <Grid container item xs={12} justify='center'>
+          <Button variant="contained" className={classes.Button}>Submit</Button>
+        </Grid>
+      </Grid>
+    );
 }
 
 export default Contact

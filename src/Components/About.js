@@ -30,6 +30,8 @@ function About() {
           I specialize in event make up including weddings and proms and
           would love to make you feel your best on your special day. Please
           email me so you too can be MadeupbyMaria.
+          <br />
+          <br />
         </Typography>
       </div>
     );
