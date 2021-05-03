@@ -1,7 +1,8 @@
-import React from 'react'
+import React from 'react';
 import { Box, CardMedia, Typography } from '@material-ui/core';
-import brandTitleImage from '../Images/madeupbymariaaboutimg.JPG'
-import KissMark from '../Images/Kiss Mark Emoji.png'
+import brandTitleImage from '../Images/madeupbymariaaboutimg.JPG';
+import KissMark from '../Images/Kiss Mark Emoji.png';
+
 function About() {
     return (
       <div>
