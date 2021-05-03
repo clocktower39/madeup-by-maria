@@ -22,6 +22,8 @@ const useStyles = makeStyles({
     homeImg: {
         paddingTop: '115%',
         top: 0,
+        opacity: 0.95,
+        borderRadius: '5px',
     },
     motto: {
         color: '#413F3D',
