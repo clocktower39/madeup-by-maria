@@ -8,13 +8,17 @@ const useStyles = makeStyles({
         backgroundColor: '#FEFFFF',
     },
     option: {
-        padding: '10px',
+        padding: '15px 7.5px',
     },
     Link: {
         textDecoration: 'none',
         color: '#413F3D',
-        padding: '10px',
+        padding: '7.5px',
         width: '100%',
+        fontFamily: 'Cabin',
+        textTransform: 'uppercase',
+        fontSize: '14px',
+        letterSpacing: '0.143em',
     }
 });
 

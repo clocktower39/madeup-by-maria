@@ -20,7 +20,7 @@ function Header() {
         variant={"h4"}
         gutterBottom
       >
-        Madeup by Maria
+        Madeup by Maria<span> </span>
         <Box style={{ width: "25px", display: "inline-block" }}>
           <CardMedia
             component={"img"}

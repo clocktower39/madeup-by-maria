@@ -7,13 +7,30 @@ const useStyles = makeStyles({
     root: {
         textAlign: 'center',
     },
+    welcome: {
+        color: '#413F3D',
+        fontFamily: 'Cabin',
+        fontWeight: 400,
+        fontSize: '14px',
+        textTransform: 'uppercase',
+        letterSpacing: '0.143em',
+        padding: '0px 0px 25px 10px'
+    },
     imgContainer: {
         width: '100%'
     },
     homeImg: {
-        paddingTop: '100%',
+        paddingTop: '115%',
         top: 0,
-    }
+    },
+    motto: {
+        color: '#413F3D',
+        fontFamily: 'Cabin',
+        fontWeight: 400,
+        fontSize: '17px',
+        padding: '20px 0',
+        letterSpacing: 'normal',
+    },
 })
 
 function Home() {
@@ -21,11 +38,11 @@ function Home() {
     return (
         <Box className={classes.root}>
             <Header />
-            <Typography variant={'h6'}>Welcome...</Typography>
+            <Typography variant={'h6'} className={classes.welcome} >Welcome...</Typography>
             <Box component='div' className={classes.imgContainer}>
                 <CardMedia image={homeImg} className={classes.homeImg}/>
             </Box>
-            <Typography variant={'h6'} >Helping You Feel Beautiful</Typography>
+            <Typography variant={'h6'} className={classes.motto} >Helping You Feel Beautiful</Typography>
         </Box>
     )
 }
