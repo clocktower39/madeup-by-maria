@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Grid, makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles({
@@ -19,30 +19,37 @@ const useStyles = makeStyles({
         textTransform: 'uppercase',
         fontSize: '14px',
         letterSpacing: '0.143em',
+    },
+    activePage: {
+        backgroundColor: '#FBD4D5',
     }
 });
 
 function Navbar() {
     const classes = useStyles();
+    const location = useLocation();
 
     const MouseOver = (event) => {
       event.target.parentElement.style.background = '#FBD4D5';
     }
     const MouseOut = (event) => {
+        console.log(event.target.parentElement.classList);
       event.target.parentElement.style.background="#FEFFFF";
     }
 
     return (
       <Grid container className={classes.root}>
-        <Grid item className={classes.option}>
+          
+        <Grid item className={`${classes.option} ${classes.activePage}`}>
           <Link className={classes.Link} to="/"
             onMouseOver={MouseOver}
             onMouseOut={MouseOut}
+            
           >
             Home
           </Link>
         </Grid>
-        <Grid item className={classes.option}>
+        <Grid item className={`${classes.option} ${classes.activePage}`}>
           <Link className={classes.Link} to="/about"
             onMouseOver={MouseOver}
             onMouseOut={MouseOut}
@@ -50,7 +57,7 @@ function Navbar() {
             About
           </Link>
         </Grid>
-        <Grid item className={classes.option}>
+        <Grid item className={`${classes.option} ${classes.activePage}`}>
           <Link className={classes.Link} to="/portfolio"
             onMouseOver={MouseOver}
             onMouseOut={MouseOut}
