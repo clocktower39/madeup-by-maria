@@ -9,10 +9,29 @@ const useStyles = makeStyles({
         '& fieldset': {
             border: 'none',
             borderRadius: 35,
+        },
+        '& input': {
+          fontFamily: 'Ubuntu',
+          fontSize: '18px',
+          fontWeight: 700,
+          color: '#8f8fa1',
+        },
+        '& textarea': {
+          fontFamily: 'Ubuntu',
+          fontSize: '18px',
+          fontWeight: 700,
+          color: '#8f8fa1',
         }
     },
     Button: {
         backgroundColor: 'white',
+    },
+    ContactTitle: {
+      padding: '40px 0 15px 0',
+      fontFamily: 'Ubuntu',
+      textTransform: 'uppercase',
+      fontWeight: 700,
+      fontSize: '30px',
     },
 })
 
@@ -29,7 +48,7 @@ function Contact() {
     return (
       <Grid container className={classes.root} spacing={3}>
         <Grid container item xs={12} justify='center'>
-          <Typography variant={"h4"} gutterBottom>Contact Me</Typography>
+          <Typography variant={"h4"} className={classes.ContactTitle} >Contact Me</Typography>
         </Grid>
         
         <Grid item xs={12} >

@@ -33,7 +33,6 @@ function Navbar() {
       event.target.parentElement.style.background = '#FBD4D5';
     }
     const MouseOut = (event) => {
-        console.log(event.target.parentElement.classList);
       event.target.parentElement.style.background="#FEFFFF";
     }
 
