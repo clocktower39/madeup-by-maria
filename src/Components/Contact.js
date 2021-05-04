@@ -45,13 +45,32 @@ function Contact() {
         setter(e.target.value);
     }
 
+    const handleSubmitContactForm = () => {
+      fetch('https://nudepineapple.com/Projects/Contact/message.php', {
+            
+        "credentials": "include",
+        "headers": {
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+            "Accept-Language": "en-US,en;q=0.5",
+            "Content-Type": "application/x-www-form-urlencoded",
+            "Upgrade-Insecure-Requests": "1"
+        },
+        "referrer": "https://nudepineapple.com/Projects/Contact/message.php",
+        "body": `email=${encodeURI(email)}&text=${encodeURI(summary)}`,
+        "method": "POST",
+        "mode": "cors"
+    })
+    }
+
     return (
       <Grid container className={classes.root} spacing={3}>
-        <Grid container item xs={12} justify='center'>
-          <Typography variant={"h4"} className={classes.ContactTitle} >Contact Me</Typography>
+        <Grid container item xs={12} justify="center">
+          <Typography variant={"h4"} className={classes.ContactTitle}>
+            Contact Me
+          </Typography>
         </Grid>
-        
-        <Grid item xs={12} >
+
+        <Grid item xs={12}>
           <TextField
             className={classes.TextField}
             fullWidth
@@ -59,10 +78,10 @@ function Contact() {
             placeholder="Name"
             variant="outlined"
             value={name}
-            onChange={(e)=>handleChange(e, setName)}
+            onChange={(e) => handleChange(e, setName)}
           />
         </Grid>
-        <Grid item xs={12} >
+        <Grid item xs={12}>
           <TextField
             className={classes.TextField}
             fullWidth
@@ -70,10 +89,10 @@ function Contact() {
             placeholder="Email"
             variant="outlined"
             value={email}
-            onChange={(e)=>handleChange(e, setEmail)}
+            onChange={(e) => handleChange(e, setEmail)}
           />
         </Grid>
-        <Grid item xs={12} >
+        <Grid item xs={12}>
           <TextField
             className={classes.TextField}
             fullWidth
@@ -83,11 +102,14 @@ function Contact() {
             multiline
             rows={7}
             value={summary}
-            onChange={(e)=>handleChange(e, setSummary)}
+            onChange={(e) => handleChange(e, setSummary)}
           />
         </Grid>
-        <Grid container item xs={12} justify='center'>
-          <Button variant="contained" className={classes.Button}>Submit</Button>
+        <Grid container item xs={12} justify="center">
+          <Button variant="contained"
+          onClick={handleSubmitContactForm} className={classes.Button}>
+            Submit
+          </Button>
         </Grid>
       </Grid>
     );
