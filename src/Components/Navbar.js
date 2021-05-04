@@ -21,7 +21,7 @@ const useStyles = makeStyles({
         letterSpacing: '0.143em',
     },
     activePage: {
-        backgroundColor: '#FBD4D5',
+        backgroundColor: '#FBD4D5 !important',
     }
 });
 
@@ -39,8 +39,7 @@ function Navbar() {
 
     return (
       <Grid container className={classes.root}>
-          
-        <Grid item className={`${classes.option} ${classes.activePage}`}>
+        <Grid item className={((location.pathname === '/')?`${classes.option} ${classes.activePage}`:`${classes.option}`)}>
           <Link className={classes.Link} to="/"
             onMouseOver={MouseOver}
             onMouseOut={MouseOut}
@@ -49,7 +48,7 @@ function Navbar() {
             Home
           </Link>
         </Grid>
-        <Grid item className={`${classes.option} ${classes.activePage}`}>
+        <Grid item className={((location.pathname === '/about')?`${classes.option} ${classes.activePage}`:`${classes.option}`)}>
           <Link className={classes.Link} to="/about"
             onMouseOver={MouseOver}
             onMouseOut={MouseOut}
@@ -57,7 +56,7 @@ function Navbar() {
             About
           </Link>
         </Grid>
-        <Grid item className={`${classes.option} ${classes.activePage}`}>
+        <Grid item className={((location.pathname === '/portfolio')?`${classes.option} ${classes.activePage}`:`${classes.option}`)}>
           <Link className={classes.Link} to="/portfolio"
             onMouseOver={MouseOver}
             onMouseOut={MouseOut}
@@ -65,7 +64,7 @@ function Navbar() {
             Portfolio
           </Link>
         </Grid>
-        <Grid item className={classes.option}>
+        <Grid item className={((location.pathname === '/contact')?`${classes.option} ${classes.activePage}`:`${classes.option}`)}>
           <Link className={classes.Link} to="/contact"
             onMouseOver={MouseOver}
             onMouseOut={MouseOut}
