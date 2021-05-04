@@ -25,25 +25,44 @@ const useStyles = makeStyles({
 function Navbar() {
     const classes = useStyles();
 
+    const MouseOver = (event) => {
+      event.target.parentElement.style.background = '#FBD4D5';
+    }
+    const MouseOut = (event) => {
+      event.target.parentElement.style.background="#FEFFFF";
+    }
+
     return (
       <Grid container className={classes.root}>
         <Grid item className={classes.option}>
-          <Link className={classes.Link} to="/">
+          <Link className={classes.Link} to="/"
+            onMouseOver={MouseOver}
+            onMouseOut={MouseOut}
+          >
             Home
           </Link>
         </Grid>
         <Grid item className={classes.option}>
-          <Link className={classes.Link} to="/about">
+          <Link className={classes.Link} to="/about"
+            onMouseOver={MouseOver}
+            onMouseOut={MouseOut}
+            >
             About
           </Link>
         </Grid>
         <Grid item className={classes.option}>
-          <Link className={classes.Link} to="/portfolio">
+          <Link className={classes.Link} to="/portfolio"
+            onMouseOver={MouseOver}
+            onMouseOut={MouseOut}
+            >
             Portfolio
           </Link>
         </Grid>
         <Grid item className={classes.option}>
-          <Link className={classes.Link} to="/contact">
+          <Link className={classes.Link} to="/contact"
+            onMouseOver={MouseOver}
+            onMouseOut={MouseOut}
+            >
             Contact
           </Link>
         </Grid>

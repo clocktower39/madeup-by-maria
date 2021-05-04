@@ -23,7 +23,6 @@ function Contact() {
     const [summary, setSummary] = useState('');
 
     const handleChange = (e,setter) => {
-        console.log(e)
         setter(e.target.value);
     }
 
