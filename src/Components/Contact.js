@@ -46,7 +46,7 @@ function Contact() {
     }
 
     const handleSubmitContactForm = () => {
-      fetch('https://nudepineapple.com/Projects/Contact/message.php', {
+      fetch('https://madeupbymaria.com/original/message.php', {
             
         "credentials": "include",
         "headers": {
@@ -55,8 +55,7 @@ function Contact() {
             "Content-Type": "application/x-www-form-urlencoded",
             "Upgrade-Insecure-Requests": "1"
         },
-        "referrer": "https://nudepineapple.com/Projects/Contact/message.php",
-        "body": `email=${encodeURI(email)}&text=${encodeURI(summary)}`,
+        "body": `email=${encodeURI(email)}&text=${encodeURI(summary)}&fullname=${encodeURI(name)}`,
         "method": "POST",
         "mode": "cors"
     })
